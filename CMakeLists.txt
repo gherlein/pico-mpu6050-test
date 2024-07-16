@@ -24,10 +24,16 @@ pico_add_extra_outputs(main)
 
 target_link_libraries(main
 	pico_stdlib
+    hardware_i2c
+    pico_cyw43_arch_none
 	# other libs as needed
 )
 
 add_custom_target(flash
     COMMAND /bin/bash ../flash
+    DEPENDS main
+)
+add_custom_target(pt
+    COMMAND /bin/bash ../pt
     DEPENDS main
 )

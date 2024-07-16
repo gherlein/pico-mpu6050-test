@@ -17,6 +17,11 @@ flash: build ${ELF}
 	@echo "Please make sure the board is connected to the picoprobe"
 	./flash ${ELF}
 
+pt: build ${ELF}
+	@echo "Flashing the project using picotool"
+	@echo "Please make sure the board is connected via USB"
+	./pt ${ELF}
+
 clean:
 	-@rm -rf build
 	-@mkdir build
